@@ -17,18 +17,32 @@ Aplicación web creada con Angular 17+ y TypeScript para gestionar finanzas pers
 ## 📂 Estructura del proyecto
 
 ```
-src/app/
-│
-├── components/
-│   ├── sidebar/        → Menú lateral de navegación
-│   ├── dashboard/      → Panel principal
-│   ├── transactions/   → Transacciones
-│   ├── budgets/        → Presupuestos
-│   └── goals/          → Metas financieras
-│
-├── app.html            → Layout principal con sidebar y router
-├── app.ts              → Componente raíz (standalone)
-└── app.routes.ts       → Configuración de rutas (próximamente)
+src/
+└── app/
+    ├── components/
+    │   ├── sidebar/        → Menú lateral de navegación
+    │   │   ├── sidebar.ts
+    │   │   ├── sidebar.html
+    │   │   └── sidebar.css
+    │   ├── dashboard/      → Panel principal (standalone)
+    │   │   └── ...
+    │   ├── transactions/   → Transacciones (standalone)
+    │   │   └── ...
+    │   ├── budgets/        → Presupuestos (standalone)
+    │   │   └── ...
+    │   └── goals/          → Metas financieras (standalone)
+    │       └── ...
+    │
+    ├── app.html            → Layout principal con <app-sidebar> y <router-outlet>
+    ├── app.ts              → Componente raíz (standalone)
+    ├── app.css
+    ├── app.spec.ts
+    ├── app.config.ts       → Configs de la app (env, constantes — opcional)
+    └── app.routes.ts       → Configuración de rutas (exporta rutas para bootstrap)
+src/
+├── index.html
+├── main.ts                 → punto de entrada + bootstrapApplication
+└── styles.css              → estilos globales
 ```
 
 ## ⚙️ Instalación y ejecución
